@@ -8,10 +8,10 @@ Developed a comprehensive Student Study Portal using Django to enhance the educa
 - Implemented secure user registration and login using Django’s built-in authentication system.
 
 ### CRUD Operations
-- Enabled Create, Read, Update, and Delete functionalities for managing student data, courses, assignments, and grades.
+- Enabled Create, Read, Update, and Delete functionalities for managing student data, notes, assignments, and to-do lists.
 
 ### Dashboard Interface
-- Designed an intuitive dashboard that allows students to easily access notes, assignments, grades, and notifications.
+- Designed an intuitive dashboard that allows students to easily access notes, assignments, to-do lists, YouTube searches, book searches, Wikipedia, and dictionaries.
 
 ### Database Management
 - Created and managed database models for students, courses, assignments, and grades, ensuring efficient data storage and retrieval.
@@ -24,11 +24,9 @@ Developed a comprehensive Student Study Portal using Django to enhance the educa
 ### Frontend Development
 - Utilized HTML, CSS, and JavaScript, to build a responsive and user-friendly interface.
 
-### Deployment
-- Successfully deployed the application on [Hosting Platform, e.g., Heroku], ensuring high availability and performance.
 
 ## Technologies Used
 - **Backend**: Django, Python
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap
-- **Database**: PostgreSQL (or any database used)
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: SQLite
 - **APIs**: YouTube Search API, Google Books API, Wikipedia API, Dictionary API
