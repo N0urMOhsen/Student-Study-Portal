@@ -1,0 +1,263 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Student-dashboard</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous"
+        />
+
+    <style>
+      /* General container styling */
+      .container {
+        margin: auto;
+        padding: 20px;
+        max-width: 1200px;
+      }
+
+      /* Align Cards */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Add consistent spacing between cards */
+        justify-content: center; /* Center cards horizontally */
+      }
+
+      /* Card styling */
+      .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Space out content evenly */
+        width: 100%;
+        max-width: 350px; /* Ensure cards have a consistent width */
+        min-height: 400px; /* Set a consistent minimum height for all cards */
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      /* Hover Effect */
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Card Body */
+      .card-body {
+        padding: 20px;
+        background-color: #f9f9f9;
+        line-height: 1.6;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Card text constraints */
+      .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Title and Subtitle Styling */
+      .card-title {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .card-subtitle {
+        font-style: italic;
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+
+      /* Button Styling */
+      .btn {
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        background-color: #007bff;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+
+        .card {
+          flex: 1 1 calc(50% - 20px); /* Two cards per row */
+        }
+      }
+
+      @media (min-width: 992px) {
+        .card {
+          flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Student Study Portal</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Options
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Books</a>
+                    <a class="dropdown-item" href="#">Wikipedia</a>
+                    <div class="dropdown-divider"></div>
+  
+                    <a class="dropdown-item" href="#">Dictionary</a>
+                    <a class="dropdown-item" href="#">Youtube</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">To-do</a>
+                    <a class="dropdown-item" href="#">Homework</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Notes</a>
+                    <a class="dropdown-item" href="#">Conversion</a>
+                    <div class="dropdown-divider"></div>
+                  </div>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <br /><br />
+
+        <div class="container mt-4">
+        <h2 class="text-center">Search books and browse your favorite</h2>
+        <p class="text-center">
+            Just enter the search query to obtain the results
+        </p>
+
+        <form method="POST" class="text-center">
+            {% csrf_token %}
+            <input
+            type="text"
+            name="text"
+            placeholder="Enter Your Search:"
+            class="form-control d-inline-block w-50"
+            />
+            <button type="submit" class="btn btn-danger mt-2">Submit</button>
+        </form>
+
+        <div class="row mt-4">
+            {% for result in results %}
+            <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body bg-light">
+                <h3 class="card-title">{{ result.title }}</h3>
+                {% if result.subtitle != 'N/A' %}
+                <h5 class="card-subtitle text-primary mb-2">
+                    {{ result.subtitle }}
+                </h5>
+                {% endif %}
+                <p class="card-text">{{ result.description }}</p>
+                <p><strong>Category:</strong> {{ result.categories }}</p>
+                <p><strong>Pages:</strong> {{ result.count }}</p>
+                <p><strong>Rating:</strong> {{ result.rating }}</p>
+                <a
+                    href="{{ result.preview }}"
+                    class="btn btn-info"
+                    target="_blank"
+                    >Preview</a
+                >
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+        ></script>
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+        ></script>
+        {% endblock%}
+    </body>
+    </html>
